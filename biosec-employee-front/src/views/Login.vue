@@ -27,6 +27,7 @@
           </div>
           <form role="form">
             <base-input
+            type="text"
               formClasses="input-group-alternative mb-3"
               placeholder="Email"
               addon-left-icon="ni ni-email-83"
@@ -80,7 +81,10 @@ export default {
   methods:{
   async  Login(){
   let res = await axios.post('http://127.0.0.1:8000/api/login',this.model);
-   console.log(res)
+  
+   if(res == 200){
+ console.log(res)
+   }
     }
    
   }

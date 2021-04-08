@@ -112,7 +112,14 @@ export default {
     //   console.log(this.form);
     // }
     async Register(){
-      let res = await axios.post('http://127.0.0.1:8000/api/register',this.form
+      const formData = new FormData();
+
+        
+        formData.append("name", this.form.name);
+        formData.append("name", this.form.email);
+        formData.append("name", this.form.password);
+       
+      let res = await axios.post('http://127.0.0.1:8000/api/register',formData
 //       {
 //   headers: {
 //     'Content-Type': 'application/json'
